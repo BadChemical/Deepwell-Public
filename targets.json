@@ -1,0 +1,14 @@
+
+{
+   "vendors": {
+
+      "Bosch": {
+        "enabled": true,
+        "ignore_robots": true,
+        "priority": 1,
+        "base_url": "https://downloadstore.boschsecurity.com/index.php",
+        "handler": "bosch_security",
+        "models": ["CPP14", "CPP13", "CPP7", "CPP6", "CPP4"]
+        } 
+      }
+}
