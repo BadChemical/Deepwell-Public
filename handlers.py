@@ -14,10 +14,10 @@ def bosch_security(page, vendor_data):
     except PlaywrightTimeoutError:
         logger.debug('[Bosch] No cookie dialog appeared.')
 
-    # human-like delay before interacting
+    
     time.sleep(random.uniform(1.0, 2.5))
     page.get_by_text('Firmware', exact=True).click()
-    page.wait_for_timeout(random.randint(800, 1500))
+    page.wait_for_timeout(random.randint(800, 1500))      #<----------- These timers are required, when useing network_idle or domcontentloaded a race condition exists in main
     page.get_by_role('button', name='Select').click()
     page.wait_for_timeout(random.randint(3000, 5000))
 
