@@ -2,7 +2,7 @@
 import sqlite3
 import os
 
-#DB_FILE = '/mnt/toshiba/deepwell/deepwell.db'
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 DB_FILE = os.path.join(DATA_DIR, 'deepwell.db')
@@ -65,7 +65,7 @@ def save_firmware_data(extracted_data):
         except Exception as e:
             print(f"[!] [Database] Error saving {item['model']}: {e}")
 
-    conn.commit()  # was missing
+    conn.commit()  
     conn.close()
     print(f"[+] [Database] Sweep complete: Added {new_records} NEW firmware records to the archive.")
 
